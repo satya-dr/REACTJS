@@ -2,24 +2,31 @@ import React,{useState} from 'react'
      
     //  console.log(useState('Enter text here2'))
 export default function TextForm(props) {
-
+      const [text, setText] = useState("");
+      const [prevText, setPrevText] = useState("");
      const handelUpclick = ()=>{
         // console.log("Upper Case Was Clicked" + text);
         let newText = text.toUpperCase();
+        setPrevText(text);
         // setText("You are clicked on handelUpclick");
         setText(newText);
+        props.showAlert("Converted to UpperCase..!","Success");
      }
      const handelLoclick = ()=>{
       // console.log("Upper Case Was Clicked" + text);
       let newText = text.toLowerCase();
+      setPrevText(text);
       // setText("You are clicked on handelUpclick");
       setText(newText);
+      props.showAlert("Converted to LowerCase..!","Success");
    }
    const handelClear = ()=>{
     // console.log("Upper Case Was Clicked" + text);
     // let newText = text(' ');
     // setText("You are clicked on handelUpclick");
+    setPrevText(text);
     setText(' ');
+    props.showAlert("Cleared All Text..","Success");
  }
  const handelSubmit = ()=>{
   // console.log("Upper Case Was Clicked" + text);
@@ -27,6 +34,11 @@ export default function TextForm(props) {
   // setText("You are clicked on handelUpclick");
      alert(" Your Text is Submited! \n Thank You.....!");
 }
+const handleUndo = () => {
+  setText(prevText); // আগের text restore করো
+  setPrevText(""); // একবার undo করলে আবার undo করা যাবে না
+  props.showAlert("Undo Successful..!", "Success");
+};
      
      const handelOnChange = (event)=>{
         // console.log("On Change");
@@ -36,13 +48,15 @@ export default function TextForm(props) {
       var text =document.querySelector("#myBox");
       text.select();
       navigator.clipboard.writeText(text.value);
+      props.showAlert("Text Copied..!","Successfull");
      }
      const handleExtraSpaces=()=>{
       let newText=text.split(/[ ]+/);
       setText(newText.join(" "));
+      props.showAlert("Extra Space Removed..!","Success ");
      }
 
-    const [text, setText]=useState('');
+    // const [text, setText]=useState('');
     // text ="New Text"// Worng way to change state
     // setText("New Text");// Correct way to change state
   return (
@@ -58,6 +72,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-1" onClick={handelSubmit}>Submit</button>
         <button className="btn btn-primary mx-1" onClick={handelCopy}>Copy Text</button>
         <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>Remove Extra Space</button>
+        <button className="btn btn-primary mx-1" onClick={handleUndo}>Undo Text</button>
 
     </div>
     <div className="containermy-2" style={{color: props.mode === 'dark'? 'white':'#042743'}}>
