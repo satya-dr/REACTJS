@@ -56,7 +56,7 @@ function App() {
          </div>
        </Router> */}
     
-         <Navbar title="CGEC TIMES" aboutText="About CGEC" mode={mode} toggleMode={toggleMode} />
+         <Navbar title="TEXT OPTIONS" aboutText="About CGEC" mode={mode} toggleMode={toggleMode} />
          <Alert alert={alert}/>
          <div className="container my-3">
             {/* <About /> */}
