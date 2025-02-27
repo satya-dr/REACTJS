@@ -7,7 +7,7 @@ export class News extends Component {
     this.state = {
       articles: [],
       loading: false,
-      page: 1, // ✅ এখানে "page" ঠিক আছে, "psge" ভুল ছিল
+      page: 1, 
     };
   }
 
