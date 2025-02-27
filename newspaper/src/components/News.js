@@ -1,0 +1,285 @@
+import React, { Component } from 'react'
+import NewsItem from '../NewsItem'
+
+
+export class News extends Component {
+  articles=  [
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "Ryan J. Foley",
+      "title": "Nearly 40% of contracts canceled by Musk’s DOGE are expected to produce no savings - The Associated Press",
+      "description": "Nearly 40% of the federal contracts that President Donald Trump’s administration claims to have canceled as part of its signature cost-cutting program aren’t expected to save the government any money, the administration’s data shows. The Department of Governm…",
+      "url": "https://apnews.com/article/doge-federal-contracts-canceled-musk-trump-cuts-a65976a725412934ad686389889db0df",
+      "urlToImage": "https://dims.apnews.com/dims4/default/11a6683/2147483647/strip/true/crop/5652x3179+0+294/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F8c%2Fe6%2F439a649c9a50ff9359fa4f6cecee%2F1eff1afab62b4509a42b13865bcff8a6",
+      "publishedAt": "2025-02-25T17:34:00Z",
+      "content": "Nearly 40% of the federal contracts that President Donald Trumps administration claims to have canceled as part of its signature cost-cutting program arent expected to save the government any money, … [+4756 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "Hakyung Kim, Sean Conlon",
+      "title": "S&P 500 falls for a fourth day after weak consumer confidence data, Nvidia leads Nasdaq lower: Live updates - CNBC",
+      "description": "Stocks were lower Tuesday as worries over economic growth and trade weighed upon the market.",
+      "url": "https://www.cnbc.com/2025/02/24/stock-market-today-live-updates.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108107179-17405058912025-02-24t154338z_1921427062_rc221daaxqll_rtrmadp_0_usa-stocks.jpeg?v=1740505939&w=1920&h=1080",
+      "publishedAt": "2025-02-25T17:33:00Z",
+      "content": "A bright spot for Home Depot as same-store sales rose for the first time in more than two years. The unexpected 0.8% gain during the fourth quarter far outpaced the 1.7% contraction analysts projecte… [+1615 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "PBS"
+      },
+      "author": null,
+      "title": "21 federal tech workers resign rather than help Musk ‘dismantle critical public services’ - PBS NewsHour",
+      "description": "The staffers wrote Tuesday in a joint resignation letter obtained by The Associated Press they \"swore to serve the American people\" and uphold their oath to the Constitution across presidential administrations but it has become clear they \"can no longer honor…",
+      "url": "https://www.pbs.org/newshour/politics/21-federal-tech-workers-resign-rather-than-help-musk-dismantle-critical-public-services",
+      "urlToImage": "https://d3i6fh83elv35t.cloudfront.net/static/2025/02/2025-02-25T110029Z_969213749_RC2MYCA0PNII_RTRMADP_3_USA-TRUMP-DOGE-1024x684.jpg",
+      "publishedAt": "2025-02-25T17:28:17Z",
+      "content": "WASHINGTON (AP) More than 20 civil service employees resigned Tuesday from billionaire Trump adviser Elon Musk’s Department of Government Efficiency, saying they were refusing to use their technical … [+6763 chars]"
+    },
+    {
+      "source": {
+        "id": "nfl-news",
+        "name": "NFL News"
+      },
+      "author": null,
+      "title": "Bucky Brooks 2025 NFL mock draft 2.0: Jags scoop up Travis Hunter; three playoff teams add a receiver - NFL.com",
+      "description": "In his second mock of the 2025 NFL Draft, Bucky Brooks has three playoff teams adding firepower at wide receiver. Meanwhile, Travis Hunter and Ashton Jeanty come off the board a little later than you might anticipate. Check out the full first-round projec",
+      "url": "https://www.nfl.com/news/bucky-brooks-2025-nfl-mock-draft-2-0-jags-scoop-up-travis-hunter-three-playoff-teams-add-a-receiver",
+      "urlToImage": "https://static.www.nfl.com/image/upload/t_editorial_landscape_12_desktop/league/pdbdzhb53onifbzyl6sb",
+      "publishedAt": "2025-02-25T16:56:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "nfl-news",
+        "name": "NFL News"
+      },
+      "author": null,
+      "title": "2025 NFL Free Agency matchmaking: One team fit for 12 notable free agents - NFL.com",
+      "description": "Could Khalil Mack return to the NFC North in free agency? Which AFC team could use Justin Fields' services? Nick Shook provides one team fit for 12 notable free agents.",
+      "url": "https://www.nfl.com/news/2025-nfl-free-agency-matchmaking-one-team-fit-for-notable-free-agents",
+      "urlToImage": "https://static.www.nfl.com/image/upload/t_editorial_landscape_12_desktop/league/birm1c4mlbe7oycoqvey",
+      "publishedAt": "2025-02-25T16:54:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "the-wall-street-journal",
+        "name": "The Wall Street Journal"
+      },
+      "author": "The Wall Street Journal",
+      "title": "Trump, Not Putin, Forces Europe to Get Serious About Defense - The Wall Street Journal",
+      "description": null,
+      "url": "https://www.wsj.com/world/europe/trump-not-putin-forces-europe-to-get-serious-about-defense-1d82cdf4",
+      "urlToImage": null,
+      "publishedAt": "2025-02-25T16:50:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Financial Times"
+      },
+      "author": "George Steer",
+      "title": "US stocks slide as consumer confidence sinks most in four years - Financial Times",
+      "description": "Oil prices drop while government bonds climb on worries Donald Trump’s tariffs will hit economy",
+      "url": "https://www.ft.com/content/b505f510-c902-480f-84c9-f38a58937a3c",
+      "urlToImage": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F83665594-89ac-40a2-92f8-f96a5a4da0da.jpg?source=next-barrier-page",
+      "publishedAt": "2025-02-25T16:18:23Z",
+      "content": "was $409now $99 for your first year\r\nFT newspaper delivered Monday-Saturday, plus FT Digital Edition delivered to your device Monday-Saturday.\r\n<ul><li></li>Weekday Print Edition<li></li>FT Weekend<l… [+142 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "KTRK-TV"
+      },
+      "author": "Mayra Moreno",
+      "title": "Houston reports 2 measles cases as Texas outbreak reaches 92 infections, most unvaccinated - ABC13 Houston",
+      "description": "Watch for measles symptoms like high fever, ear infections, runny nose, pink eye, and a rash that can go from head to toe. If you have any, call your doctor immediately.",
+      "url": "https://abc13.com/post/houston-reports-2-measles-cases-texas-outbreak-reaches-92-infections-most-unvaccinated/15952249/",
+      "urlToImage": "https://cdn.abcotvs.com/dip/images/15952487_022425-kttk-measles-outbreak-sw-img.png?w=1600",
+      "publishedAt": "2025-02-25T16:08:28Z",
+      "content": "HOUSTON, Texas (KTRK) -- According to the State Health Department, there are at least 92 measles cases, including two in Houston.\r\nThe biggest concern is an outbreak in West Texas, where 90 cases are… [+1456 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "9to5Mac"
+      },
+      "author": "Ryan Christoffel",
+      "title": "Apple’s new C1 brings two killer features, and it’s just the start - 9to5Mac",
+      "description": "Apple’s new C1 modem in the iPhone 16e brings two killer features that get me very excited about the future of C-class modems.",
+      "url": "https://9to5mac.com/2025/02/25/apples-new-c1-brings-two-killer-features-and-its-just-the-start/",
+      "urlToImage": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2025/02/Apples-C1-chip-might-just-mean-mmWave-5G-is-dead.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "publishedAt": "2025-02-25T16:05:00Z",
+      "content": "Apples newest iPhone comes with a key component many years in the making: the C1 modem. The idea of a new modem may not sound very exciting on the surface, but already with this first version its bec… [+2945 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Rockford Register Star"
+      },
+      "author": "Jeff Kolkey",
+      "title": "Ready for the Great Planet Parade? How, when and where to see 7 planets over Illinois - Rockford Register Star",
+      "description": "If you miss Thursday night's Great Planet Parade, you won't get the chance to see it again until 2040.",
+      "url": "https://www.rrstar.com/story/news/local/2025/02/24/best-illinois-spots-for-viewing-the-great-planet-parade/79339919007/",
+      "urlToImage": "https://www.rrstar.com/gcdn/authoring/authoring-images/2025/02/11/USAT/78410316007-usatsi-19662726.jpg?crop=5368,3020,x0,y535&width=3200&height=1801&format=pjpg&auto=webp",
+      "publishedAt": "2025-02-25T16:04:11Z",
+      "content": "<ul><li>Seven planets will align in the night sky on Thursday after sunset in a phenomenon known as the \"Great Planet Parade\".</li><li>Mercury, Venus, Jupiter and Mars will be visible to the naked ey… [+3746 chars]"
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "Nicole Winfield, Trisha Thomas",
+      "title": "Pope Francis met at the hospital with Vatican No. 2, took major governing decisions - The Associated Press",
+      "description": "The Vatican says that Pope Francis remains in critical but stable condition. Vatican officials say that his blood parameters are stable, as he battles double pneumonia while continuing to work from the hospital. The Vatican’s evening update said the 88-year-o…",
+      "url": "https://apnews.com/article/vatican-pope-health-83b690c6d47679c37ae10329369fd480",
+      "urlToImage": "https://dims.apnews.com/dims4/default/1042635/2147483647/strip/true/crop/4010x2256+0+209/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F4c%2Fb5%2F37f2fe2b485cf26fdb7a8e31b95c%2F475464ddb62d4b709fc1b6d665bbb859",
+      "publishedAt": "2025-02-25T16:03:00Z",
+      "content": "ROME (AP) Pope Francis remained in critical but stable condition Tuesday, with his blood parameters remaining stable as he works from the hospital while battling double pneumonia, the Vatican said. \r… [+7705 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Live Science"
+      },
+      "author": "Ben Turner",
+      "title": "Scientists made fake Martian dust — and found a big surprise about what makes Mars red - Livescience.com",
+      "description": "New research has revealed that Martian dust's red hue comes from reactions that occurred in wet — not dry — conditions, and it could have implications for the possibility of life on the planet.",
+      "url": "https://www.livescience.com/space/mars/scientists-made-fake-martian-dust-and-found-a-big-surprise-about-what-makes-mars-red",
+      "urlToImage": "https://cdn.mos.cms.futurecdn.net/gyvJwtr8NxyGMMJ9T5Z5o3-1200-80.jpg",
+      "publishedAt": "2025-02-25T16:00:08Z",
+      "content": "We may have been wrong about how Mars\r\n got its characteristic red hue, a new study reveals.\r\nThe Red Planet owes its ruddy complexion to rusted iron minerals, dispersed across billions of years by w… [+4115 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "Vivian Ho",
+      "title": "‘Unknown disease’ that can kill within days leaves 53 dead in Congo - The Washington Post",
+      "description": "World Health Organization officials said the outbreak appeared to originate from a village where three children died after reportedly eating a bat carcass.",
+      "url": "https://www.washingtonpost.com/world/2025/02/25/unknown-illness-hemorrhagic-fever-congo-africa/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/A5OZS54YD4JST57IA23P6B444E_size-normalized.jpg&w=1440",
+      "publishedAt": "2025-02-25T15:51:12Z",
+      "content": "An unknown illness has killed 53 people in a northwest region of the Democratic Republic of Congo, with a significant portion of deaths taking place within 48 hours of the onset of symptoms, accordin… [+3417 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "NBCSports.com"
+      },
+      "author": "Michael David Smith",
+      "title": "Packers GM Brian Gutekunst on tush push: “We’re not very successful against it” - NBC Sports",
+      "description": "\"I haven't put much thought into it,\" Gutekunst said. \"It's been around for a while, we've used it in different fashions with our tight end.\"",
+      "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/packers-gm-brian-gutekunst-on-tush-push-were-not-very-successful-against-it",
+      "urlToImage": "https://nbcsports.brightspotcdn.com/dims4/default/06cb304/2147483647/strip/true/crop/6000x3375+0+312/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2Feb%2Fc0%2F3563171b4b34ba3d6bdec4b03e3d%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F2171179028",
+      "publishedAt": "2025-02-25T15:24:34Z",
+      "content": "The Packers have introduced a proposal to outlaw the tush push, and Green Bay General Manager Brian Gutekunst said today that he doesnt know much about it but does know the Packers defense struggles … [+1185 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Financial Times"
+      },
+      "author": "Leila Abboud, Henry Foy, Richard Milne, Ben Hall",
+      "title": "Emmanuel Macron ‘turning point’ on Ukraine lacks Donald Trump commitments - Financial Times",
+      "description": "French president to be followed by British PM in seeking support for US ‘backstop’ in postwar Ukraine",
+      "url": "https://www.ft.com/content/983becc0-4604-4f0a-82de-10746af8d51a",
+      "urlToImage": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F99972035-6dfe-4a02-8f41-0a60794b2242.jpg?source=next-barrier-page",
+      "publishedAt": "2025-02-25T14:30:37Z",
+      "content": "was $409now $99 for your first year\r\nFT newspaper delivered Monday-Saturday, plus FT Digital Edition delivered to your device Monday-Saturday.\r\n<ul><li></li>Weekday Print Edition<li></li>FT Weekend<l… [+142 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Variety"
+      },
+      "author": "Rebecca Rubin",
+      "title": "How China’s ‘Ne Zha 2’ Beat ‘Inside Out 2’ to Become the Highest-Grossing Animated Film in History - Variety",
+      "description": "How did China’s \"Ne Zha 2\" become the year's biggest box office breakout?",
+      "url": "https://variety.com/2025/film/box-office/ne-zha-2-biggest-animated-movie-box-office-china-1236318940/",
+      "urlToImage": "https://variety.com/wp-content/uploads/2025/02/MCDNEZH_EC008-1-1.jpg?w=1000&h=563&crop=1",
+      "publishedAt": "2025-02-25T14:30:00Z",
+      "content": "This year’s biggest blockbuster (so far) isn’t from Marvel, Pixar or James Cameron. In fact, most Americans aren’t even familiar with the box office juggernaut — because it’s barely playing in the Un… [+5270 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "PEOPLE"
+      },
+      "author": "https://www.facebook.com/peoplemag",
+      "title": "Zoë Kravitz Breaks Her Silence About Split from Channing Tatum: 'I Care for Him Very Much' - AOL",
+      "description": "Zoë Kravitz touched on her breakup from ex-fiancé Channing Tatum for the first time in a cover interview for the March 2025 issue of 'ELLE'",
+      "url": "https://people.com/zoe-kravitz-breaks-silence-channing-tatum-breakup-11685888",
+      "urlToImage": "https://people.com/thmb/IejFfZVf_c0Xya5S3CjVBTTQIrs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2)/zoe-kravitz-channing-tatum-blink-twice-premiere-022525-ff27cc8683884610bd1c0b84f40a1b51.jpg",
+      "publishedAt": "2025-02-25T14:25:00Z",
+      "content": "Zoë Kravitz is grateful for the personal and professional journey she and ex-fiancé Channing Tatum took together during the course of their relationship.\r\nThe actress and filmmaker, 36, touched on he… [+2448 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Variety"
+      },
+      "author": "Rebecca Rubin",
+      "title": "‘Star Wars’ Boss Kathleen Kennedy Planning to Exit Lucasfilm at the End of 2025 - Variety",
+      "description": "Kathleen Kennedy, the longtime president of Lucasfilm, is expected to step down at the end of 2025.",
+      "url": "https://variety.com/2025/film/news/star-wars-kathleen-kennedy-exit-lucasfilm-1236319794/",
+      "urlToImage": "https://variety.com/wp-content/uploads/2023/04/kathleen-kennedy-star-wars-celebration-2023.jpg?w=1000&h=562&crop=1",
+      "publishedAt": "2025-02-25T14:21:00Z",
+      "content": "Kathleen Kennedy, the longtime president of Lucasfilm, is expected to step down at the end of 2025. \r\nShe intends to retire after her current contract ends, according to a source with knowledge of he… [+2655 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Forbes"
+      },
+      "author": "Sara Dorn",
+      "title": "Medicaid Cuts Threaten A Key House Vote On Trump’s Agenda Today—Here’s Why The GOP Is Divided - Forbes",
+      "description": "Trump has endorsed the House budget, but has also vowed that his administration would leave Medicaid intact.",
+      "url": "https://www.forbes.com/sites/saradorn/2025/02/25/medicaid-cuts-threaten-a-key-house-vote-on-trumps-agenda-today-heres-why-the-gop-is-divided/",
+      "urlToImage": "https://imageio.forbes.com/specials-images/imageserve/67bcd83e44518d197c07be55/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+      "publishedAt": "2025-02-25T14:16:00Z",
+      "content": "House Republicans are expected to vote on a spending blueprint Tuesday that would kickstart the legislative process for enacting President Donald Trumps policy agendabut nearly $1 trillion in potenti… [+5451 chars]"
+    }
+  ]
+  constructor(){
+    super();
+    console.log("I am a constructor from News component..!");
+    this.state = {
+      articles: this.articles
+    }
+  }
+
+  render() {
+    return (
+      <div className='container my-3'>
+         <h2> CGEC-TIMES - Top Headlines...!</h2>
+
+         <div className="row">
+         {this.state.articles.map((element)=>{
+
+              return  <div className="col-md-3" key={element.url} >
+                     <NewsItem  title={element.title?.slice(0,45)} description={element.description?.slice(0,88)} newsUrl={element.url } imageUrl={element.urlToImage} />
+                </div>
+
+         })}
+            
+       
+            
+         </div>
+      </div>
+    )
+  }
+}
+
+export default News
